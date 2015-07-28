@@ -3,9 +3,22 @@ $(document).ready(function() {
 board = $('#board');
 console.log(board);
 
-tile = '<div class="tile"></div>'
+tile = '<div class="tile" id="tile_0"></div>'
 
+reduct = function(a,b) {
+	return a + b;
+}
 
+tileLoop = function (num) {
+	var rebuiltString = ""
+	for (var i = 0; i < num.length; i++) {
+		if (num[i] === "0") {
+			num[i] = i;
+		console.log(num[i]);
+
+		}
+	};
+}
 
 $('#startGame').click(function() {
 	console.log('Submit Clicked');
@@ -21,19 +34,25 @@ $('#startGame').click(function() {
 function createBoard(gridSize) {
 	 realGameHolderRow = []
 	 realGameHolder = []
-	var row = [];
+	
 	// create row Array
-	var grid = []
+	var row = [];
+
 	// create array of row's
+	var grid = []
+	
+	// bomb count based of of gridsize, for now need to look at %
 	var bombCount = gridSize;
 	
 
+	// defualt bomb count, B = bomb placement
 	for (var i = 0; i < gridSize; i++) {
-		row.push("X");
+		row.push(0);
 		grid.push(row);
-		// console.log(realGameHolderRow);
+
 	};
 
+	console.log(grid);
 
 		for (var i = 0; i < (gridSize * 10); i++) {
 			if (i % gridSize == 0){
