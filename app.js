@@ -31,14 +31,21 @@ function createBoard(gridSize) {
 	for (var i = 0; i < gridSize; i++) {
 		row.push("X");
 		grid.push(row);
-		console.log(realGameHolderRow);
+		// console.log(realGameHolderRow);
 	};
 
 
 		for (var i = 0; i < (gridSize * 10); i++) {
-		realGameHolder.push(tile);
-		// realGameHolder.push(realGameHolderRow);
-		console.log('@nd loop')	
+			if (i % gridSize == 0){
+				if (i == !0) {
+		realGameHolder.push("<br>");
+		console.log('Added LineBreak ---------------')		
+			}
+		
+			} else {
+				realGameHolder.push(tile);
+				console.log('Added tile ---------------')
+			}
 	};
 
 
@@ -68,25 +75,25 @@ function createBoard(gridSize) {
 // console.log("Completed Grid ------------------");
 
 
-	var	whileCounter = 0;	
-			// console.log("placeBombs ------------------");
-		while (bombCount > 0) {
-			whileCounter++;
+	// var	whileCounter = 0;	
+	// 		// console.log("placeBombs ------------------");
+	// 	while (bombCount > 0) {
+	// 		whileCounter++;
 
-			//  Math.floor(Math.random() * (max - min + 1)) + min;
-		var x = Math.floor(Math.random() * (gridSize - 0 + 1)) + 0;
-		var y = Math.floor(Math.random() * (gridSize - 0 + 1)) + 0;
+	// 		//  Math.floor(Math.random() * (max - min + 1)) + min;
+	// 	var x = Math.floor(Math.random() * (gridSize - 0 + 1)) + 0;
+	// 	var y = Math.floor(Math.random() * (gridSize - 0 + 1)) + 0;
 		
-		console.log("This is X! "+x);
-		console.log("This is Y! "+y);
+	// 	console.log("This is X! "+x);
+	// 	console.log("This is Y! "+y);
 
-		console.log("Bomb Count "+ bombCount)
-		console.log("While Count "+ whileCounter)
-		if (grid[x][y]) {
-			grid[x][y] = "BOMB"
-			bombCount--;
-		}
-	}
+	// 	console.log("Bomb Count "+ bombCount)
+	// 	console.log("While Count "+ whileCounter)
+	// 	if (grid[x][y]) {
+	// 		grid[x][y] = "BOMB"
+	// 		bombCount--;
+	// 	}
+	// }
 
 
 
