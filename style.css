@@ -1,6 +1,6 @@
 #board {
-	width: 500px;
-	height: 500px;
+	/*min-width: 500px;*/
+	/*min-height: 500px;*/
 	background-color: gray;
 }
 
@@ -9,7 +9,7 @@
 	background-image: red;
     border: 1px solid gray;
     background-color: red;
-    width: 50px;
+    width: 60px;
     height: 50px;
     display: inline-block;
     margin: 0px;

@@ -26,24 +26,36 @@ function createBoard(gridSize) {
 	var grid = []
 	// create array of row's
 	var bombCount = gridSize;
-	for (var i = 0; i < gridSize; i++) {
+	
 
+	for (var i = 0; i < gridSize; i++) {
 		row.push("X");
-		// console.log(grid);
 		grid.push(row);
-		// realGameHolderRow.push(tile);
 		console.log(realGameHolderRow);
 	};
+
 
 		for (var i = 0; i < (gridSize * 10); i++) {
 		realGameHolder.push(tile);
 		// realGameHolder.push(realGameHolderRow);
 		console.log('@nd loop')	
 	};
-		var	tileDims = 500 / gridSize;
-		$(".tile").css('width:' + tileDims +';')
-		$(board).html(realGameHolder);
 
+
+		var	tileDims = parseInt($('#board').css("width")) / gridSize;
+		console.log("-------------------->>>>>>>")
+		console.log(tileDims)
+		
+		$(board).html(realGameHolder);
+		$('.tile').css("width", tileDims);
+		$('.tile').css("height", tileDims);
+		// Attaches Click handlers after tils are created
+
+			$('.tile').click(function() {
+			console.log('Tile Clicked');
+			console.log($(this));
+	
+				})
 		
 		
 	// for (var i = 0; i < gridSize; i++) {
